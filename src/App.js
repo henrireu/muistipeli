@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import maat from './maat.js';
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [maanKirjaus, setMaanKirjaus] = useState([]);
+
+  function kirjaaMaa(maanNimi) {
+    const uusilista = [...maanKirjaus];
+    uusilista.push(maanNimi);
+    setMaanKirjaus(uusilista);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Muistipeli</h1>
+      {maat.map((maa, indeksi) => (
+        <div key={indeksi}  onClick={() => kirjaaMaa(maa.nimi)}>
+          <img src={maa.url}></img>
+          <p>{maa.nimi}</p>
+        </div>
+      ))}
     </div>
-  );
+  )
 }
 
 export default App;
