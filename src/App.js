@@ -6,7 +6,11 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const [maaLista, setMaaLista] = useState([]);
+  // tämä lista on tehty sitä varten että katsotaan tuleeko duplikaatteja
   const [maanKirjaus, setMaanKirjaus] = useState([]);
+
+  const [pisteet, setPisteet] = useState(0);
+  const [parastulos, setParastulos] = useState(0);
 
   useEffect(() => {
     const uusilista = [];
@@ -31,13 +35,18 @@ function App() {
 
     //katsotaan onko duplikaatteja eli päättyykö peli
     const set = new Set(uusilista);
-    console.log("set: " + set.size);
-    console.log("uusilista: " + uusilista.length);
     if (set.size !== uusilista.length) {
       alert("peli loppui");
       setMaanKirjaus([]);
+      if (pisteet > parastulos) {
+        setParastulos(pisteet);
+      }
+      setPisteet(0);
     } else {
       setMaanKirjaus(uusilista);
+      let uudetpisteet = pisteet;
+      uudetpisteet++;
+      setPisteet(uudetpisteet);
     }
     sekoitaJarjestys();
   }
@@ -46,8 +55,8 @@ function App() {
   return (
     <div className="App">
       <h1>Muistipeli</h1>
-      <h3>Paras tulos:</h3>
-      <h3>Pisteet:</h3>
+      <h3>Paras tulos: {parastulos}</h3>
+      <h3>Pisteet: {pisteet}</h3>
       <div className="maataulukko">
         {maaLista.map((maa, indeksi) => (
           <div className="maaesine" key={indeksi}  onClick={() => kirjaaMaa(maa.nimi)}>
