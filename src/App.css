@@ -6,3 +6,22 @@ img {
   width: 100px;
   height: 60px;
 }
+
+.maataulukko {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.maaesine {
+  width: 15%; 
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: lightgrey;
+}
+
+.maaesine:hover {
+  background-color: grey;
+  cursor: pointer;
+}
