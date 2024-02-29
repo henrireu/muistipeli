@@ -47,6 +47,11 @@ function App() {
       let uudetpisteet = pisteet;
       uudetpisteet++;
       setPisteet(uudetpisteet);
+      if(uudetpisteet > 11) {
+        alert("onnittelut pääsit pelin läpi!");
+        setParastulos(12);
+        setPisteet(0);
+      }
     }
     sekoitaJarjestys();
   }
