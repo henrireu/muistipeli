@@ -1,8 +1,8 @@
 import './App.css';
-import maat from './maat.js';
+import FetchKoirakuvat from './maat.js';
 import { useState, useEffect } from 'react';
 
-// arvotaan numero 1-12
+const maat = await FetchKoirakuvat();
 
 function App() {
   const [maaLista, setMaaLista] = useState([]);
@@ -11,6 +11,18 @@ function App() {
 
   const [pisteet, setPisteet] = useState(0);
   const [parastulos, setParastulos] = useState(0);
+
+  /*useEffect(() => {
+    const uusilista = [];
+    maat.map((maa, indeksi) => {
+      const objekti = {
+        nimi: maa.nimi,
+        url: maa.url
+      }
+      uusilista.push(objekti);
+    })
+    setMaaLista(uusilista);
+  },[]);*/
 
   useEffect(() => {
     const uusilista = [];
