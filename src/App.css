@@ -1,5 +1,32 @@
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+}
+
 .App {
   text-align: center;
+}
+
+.linkki {
+  color: black;
+  font-size: 30px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.linkki:hover {
+  background: grey;
+  border-radius: 8px;
+}
+
+.pelilistaDiv {
+  background: lightgrey;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 img {

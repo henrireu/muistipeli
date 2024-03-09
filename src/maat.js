@@ -73,4 +73,5 @@ const FetchKoirakuvat = async () => {
     return kuvat;
   };
   
-  export default FetchKoirakuvat;
+  export  { maat };
+  //export default FetchKoirakuvat;
