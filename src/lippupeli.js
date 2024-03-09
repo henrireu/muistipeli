@@ -82,7 +82,7 @@ function Lippupeli() {
           </div>
         ))}
       </div>
-      <Link to="/">Etusivulle</Link>
+      <Link className="linkki" to="/">Etusivulle</Link>
     </div>
   )
 }

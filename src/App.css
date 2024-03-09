@@ -4,6 +4,14 @@ h1 {
   font-size: 60px;
 }
 
+.paaDiv {
+  background-color: lightgrey;
+  border-radius: 8px;
+  width: 95%;
+  height: 600px;
+}
+
+
 .App {
   text-align: center;
 }
@@ -13,11 +21,12 @@ h1 {
   font-size: 30px;
   padding: 10px;
   text-decoration: none;
+  border: solid grey;
+  border-radius: 8px;
 }
 
 .linkki:hover {
   background: grey;
-  border-radius: 8px;
 }
 
 .pelilistaDiv {
@@ -51,4 +60,8 @@ img {
 .maaesine:hover {
   background-color: grey;
   cursor: pointer;
+}
+
+.pieniotsikko {
+  text-align: center;
 }
